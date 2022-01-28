@@ -838,180 +838,224 @@ void player2(int ch1)
 		glVertex2f(b[l2][0], b[l2][1]);
 		glEnd();
 	}
-	else if((ra1+l2>57&&ch1==2)||(ra1+l2>51&&p2==0&&ch1==2))
-									{  if(b[ra1+l1][0]==d[1][0]&&b[ra1+l1][1]==d[1][1])
-										ch1=776;
-										else 
-											{
-											ch1=1;}
-										}
-
-
-						    if(ch1==1&&b[ra1+l1][0]==d[1][0]&&b[ra1+l1][1]==d[1][1])
-										{
-										display2();
-										return;
-										}
-									else if(ch1==2&&b[ra1+l2][0]==d[0][0]&&b[ra1+l2][1]==d[0][1])
-										{
-										display2();
-										return;
-										}
-														 
-							 switch(ch1)
-							 {
-							 case 1:if(g1==0&&(ra1==6||ra1==1))
-									{ra1=1;
-										g1=1;
-									}	   
-										
-                                    else
-									{z=1;
-									z1=0;
-										ply1=1;ply2=0;
-
-									}
 
 
 
-
-									if((g1==1)&&(ra1+l1<=57)&&(h3==0))
-									{      
-										for(i=0;i<2;i++)
-										{ 
-											if(b[ra1+l1][0]==c[i][0]&&b[ra1+l1][1]==c[i][1])
-											{
-														
-													p2=1;
-											
-												if(i==0) {f1=0;k1=0;c[0][0]=-0.5;c[0][1]=-0.7;}
-												if(i==1) {f2=0;k2=0;c[1][0]=-0.7;c[1][1]=-0.5;}
-											
-											}
-										}
+	glColor3f(1, 0, 1);
 
 
-										if(((ra1+l1)>51&&p2==1)||(ra1+l1<=51))
-										{  	glColor3f(0,0,0);
-											if(l1==0)
-											{		
-											glBegin(GL_POINTS);
-											glVertex2f(0.5,0.7);
-											glEnd();
-											}	else if(l1==1||l1==52||l1==53||l1==54||l1==55||l1==56)
-													{glColor3f(0,0,1);
-													}
-													else if(l1==27)
-													{glColor3f(1,0,0);
-													}
-											glBegin(GL_POINTS);
-											glVertex2f(b[l1][0],b[l1][1]);
-											glEnd();
-											glColor3f(1,0,1);
-											z=1;
-											l1=ra1+l1;
-											d[0][0]=b[l1][0];
-											d[0][1]=b[l1][1];
-											if(ra1==6)
-											{z1=0;
-												ply1=0;
-												ply2=1;
-											}
-											else
-											{
-												ply1=1;
-												ply2=0;
-											}
-											
-										}
-									}ch1=0;
-								      	if(l1==57)
-												{ l1=0;
-													h3=1;
-												 d[0][0]=-0.7;d[0][1]=0.5;
-												 s2++;
-												}
+	if (h3 == 1)
+		ch1 = 2;
+	else if (h4 == 1)
+		ch1 = 1;
 
-									break;
+	else if ((ra1 + l1 > 57 || (ra1 + l1 > 51 && p2 == 0)) && (ra1 + l2 > 57 || (ra1 + l2 > 51 && p2 == 0)))
+	{
+		ply1 = 1;
+		ply2 = 0;
+	}
+	else if ((ra1 + l1 > 57 && ch1 == 1) || (ra1 + l1 > 51 && p2 == 0 && ch1 == 1))
+	{
+		if (b[ra1 + l2][0] == d[0][0] && b[ra1 + l2][1] == d[0][1])
+			ch1 = 776;
+		else
+		{
 
-							case 2:if(g2==0&&(ra1==6||ra1==1))
-									{ra1=1;
-										g2=1;
-									}	   
-										
-                                    else
-									{z=1;
-									z1=0;
-										ply1=1;ply2=0;
-									}
-
-									if((g2==1)&&(ra1+l2<=57)&&(h4==0))
-									{
-										for(i=0;i<2;i++)
-										{
-											if(b[ra1+l2][0]==c[i][0]&&b[ra1+l2][1]==c[i][1])
-											{
-												if(i==0) {f1=0;k1=0;c[0][0]=-0.5;c[0][1]=-0.7;}
-												if(i==1) {f2=0;k2=0;c[1][0]=-0.7;c[1][1]=-0.5;}
-												p2=1;
-											
-                                                
-											}
-										}
+			ch1 = 2;
+		}
+	}
+	else if ((ra1 + l2 > 57 && ch1 == 2) || (ra1 + l2 > 51 && p2 == 0 && ch1 == 2))
+	{
+		if (b[ra1 + l1][0] == d[1][0] && b[ra1 + l1][1] == d[1][1])
+			ch1 = 776;
+		else
+		{
+			ch1 = 1;
+		}
+	}
 
 
-										if(((ra1+l2)>51&&p2==1)||(ra1+l2<=51))
-										{   glColor3f(0,0,0);
-											if(l2==0)
-											{		
-											glBegin(GL_POINTS);
-											glVertex2f(0.7,0.5);
-											glEnd();
-											}	else if(l2==1||l2==52||l2==53||l2==54||l2==55||l2==56)
-													{glColor3f(0,0,1);
-													}
-													else if(l2==27)
-													{glColor3f(1,0,0);
-													}
-											glBegin(GL_POINTS);
-											glVertex2f(b[l2][0],b[l2][1]);
-											glEnd();
-											glColor3f(1,0,1);
-											z=1;
-											l2=ra1+l2;
-											d[1][0]=b[l2][0];
-											d[1][1]=b[l2][1];
-											if(ra1==6)
-											{z1=0;
-												ply1=0;
-												ply2=1;
-											}
-											else
-											{
-												ply1=1;
-												ply2=0;
-											}
-											
-										}
-									}
-								
-                                         	if(l2==57)
-												{l2=0;
-													h4=1;
-												d[1][0]=-0.5;d[1][1]=0.7;
-												s2++;
-												}
-									break;
-							case 776:ply1=1;ply2=0;
-									break;
-                          
-                          
-							  }
-                  ch1=0;
-			        glColor3f(1,0,1); 
-					arrow();
-					display2();
-					
+	if (ch1 == 1 && b[ra1 + l1][0] == d[1][0] && b[ra1 + l1][1] == d[1][1])
+	{
+		display2();
+		return;
+	}
+	else if (ch1 == 2 && b[ra1 + l2][0] == d[0][0] && b[ra1 + l2][1] == d[0][1])
+	{
+		display2();
+		return;
+	}
+
+	switch (ch1)
+	{
+	case 1:if (g1 == 0 && (ra1 == 6 || ra1 == 1))
+	{
+		ra1 = 1;
+		g1 = 1;
+	}
+
+		  else
+	{
+		z = 1;
+		z1 = 0;
+		ply1 = 1; ply2 = 0;
+
+	}
+
+
+
+
+		  if ((g1 == 1) && (ra1 + l1 <= 57) && (h3 == 0))
+		  {
+			  for (i = 0; i < 2; i++)
+			  {
+				  if (b[ra1 + l1][0] == c[i][0] && b[ra1 + l1][1] == c[i][1])
+				  {
+
+					  p2 = 1;
+
+					  if (i == 0) { f1 = 0; k1 = 0; c[0][0] = -0.5; c[0][1] = -0.7; }
+					  if (i == 1) { f2 = 0; k2 = 0; c[1][0] = -0.7; c[1][1] = -0.5; }
+
+				  }
+			  }
+
+
+			  if (((ra1 + l1) > 51 && p2 == 1) || (ra1 + l1 <= 51))
+			  {
+				  glColor3f(0, 0, 0);
+				  if (l1 == 0)
+				  {
+					  glBegin(GL_POINTS);
+					  glVertex2f(0.5, 0.7);
+					  glEnd();
+				  }
+				  else if (l1 == 1 || l1 == 52 || l1 == 53 || l1 == 54 || l1 == 55 || l1 == 56)
+				  {
+					  glColor3f(0, 0, 1);
+				  }
+				  else if (l1 == 27)
+				  {
+					  glColor3f(1, 0, 0);
+				  }
+				  glBegin(GL_POINTS);
+				  glVertex2f(b[l1][0], b[l1][1]);
+				  glEnd();
+				  glColor3f(1, 0, 1);
+				  z = 1;
+				  l1 = ra1 + l1;
+				  d[0][0] = b[l1][0];
+				  d[0][1] = b[l1][1];
+				  if (ra1 == 6)
+				  {
+					  z1 = 0;
+					  ply1 = 0;
+					  ply2 = 1;
+				  }
+				  else
+				  {
+					  ply1 = 1;
+					  ply2 = 0;
+				  }
+
+			  }
+		  }ch1 = 0;
+		  if (l1 == 57)
+		  {
+			  l1 = 0;
+			  h3 = 1;
+			  d[0][0] = -0.7; d[0][1] = 0.5;
+			  s2++;
+		  }
+
+		  break;
+
+	case 2:if (g2 == 0 && (ra1 == 6 || ra1 == 1))
+	{
+		ra1 = 1;
+		g2 = 1;
+	}
+
+		  else
+	{
+		z = 1;
+		z1 = 0;
+		ply1 = 1; ply2 = 0;
+	}
+
+		  if ((g2 == 1) && (ra1 + l2 <= 57) && (h4 == 0))
+		  {
+			  for (i = 0; i < 2; i++)
+			  {
+				  if (b[ra1 + l2][0] == c[i][0] && b[ra1 + l2][1] == c[i][1])
+				  {
+					  if (i == 0) { f1 = 0; k1 = 0; c[0][0] = -0.5; c[0][1] = -0.7; }
+					  if (i == 1) { f2 = 0; k2 = 0; c[1][0] = -0.7; c[1][1] = -0.5; }
+					  p2 = 1;
+
+
+				  }
+			  }
+
+
+			  if (((ra1 + l2) > 51 && p2 == 1) || (ra1 + l2 <= 51))
+			  {
+				  glColor3f(0, 0, 0);
+				  if (l2 == 0)
+				  {
+					  glBegin(GL_POINTS);
+					  glVertex2f(0.7, 0.5);
+					  glEnd();
+				  }
+				  else if (l2 == 1 || l2 == 52 || l2 == 53 || l2 == 54 || l2 == 55 || l2 == 56)
+				  {
+					  glColor3f(0, 0, 1);
+				  }
+				  else if (l2 == 27)
+				  {
+					  glColor3f(1, 0, 0);
+				  }
+				  glBegin(GL_POINTS);
+				  glVertex2f(b[l2][0], b[l2][1]);
+				  glEnd();
+				  glColor3f(1, 0, 1);
+				  z = 1;
+				  l2 = ra1 + l2;
+				  d[1][0] = b[l2][0];
+				  d[1][1] = b[l2][1];
+				  if (ra1 == 6)
+				  {
+					  z1 = 0;
+					  ply1 = 0;
+					  ply2 = 1;
+				  }
+				  else
+				  {
+					  ply1 = 1;
+					  ply2 = 0;
+				  }
+
+			  }
+		  }
+
+		  if (l2 == 57)
+		  {
+			  l2 = 0;
+			  h4 = 1;
+			  d[1][0] = -0.5; d[1][1] = 0.7;
+			  s2++;
+		  }
+		  break;
+	case 776:ply1 = 1; ply2 = 0;
+		break;
+
+
+	}
+	ch1 = 0;
+	glColor3f(1, 0, 1);
+	arrow();
+	display2();
+
 }
 
 
@@ -1019,328 +1063,197 @@ void player2(int ch1)
 
 void pl1_pl2(void)
 {
-  char *guide="PLAYER 1\n\nPLAYER 2";
-  void *en=GLUT_BITMAP_TIMES_ROMAN_24;
-  float x=-1.4,y=0.7,z=0;
-  int i;
-  in_guide=1;
-  glColor3f(0,1,0);
-  glRasterPos3f(x,y,z);
+	const char* guide = "PLAYER 1\n\nPLAYER 2";
+	void* en = GLUT_BITMAP_TIMES_ROMAN_24;
+	float x = -1.4, y = 0.7, z = 0;
+	int i;
+	in_guide = 1;
+	glColor3f(0, 1, 0);
+	glRasterPos3f(x, y, z);
 
-  for(i=0;guide[i]!='\0';i++)
-  {
-	  if(guide[i]=='\n')
-	  {glColor3f(1,0,1);
-		  y-=0.08;
-		  glRasterPos3f(x,y,z);
-	  }
+	for (i = 0; guide[i] != '\0'; i++)
+	{
+		if (guide[i] == '\n')
+		{
+			glColor3f(1, 0, 1);
+			y -= 0.08;
+			glRasterPos3f(x, y, z);
+		}
 
-    glutBitmapCharacter(en,guide[i]);
-  }
+		glutBitmapCharacter(en, guide[i]);
+	}
 
-  glFlush();
+	glFlush();
 
-  }
+}
 
 
 
 void display1(void)
-{z=1,z1=1,dice1=1;
-f1=0,f2=0,g1=0,g2=0,k1=0,k2=0,l1=0,l2=0,ply1=1,ply2=0,h1=0,h2=0,h3=0,h4=0,s1=0,s2=0;
-p1=0,p2=0,enter=0;
-	glClearColor(0,0,0,0);
+{
+	z = 1, z1 = 1, dice1 = 1;
+	f1 = 0, f2 = 0, g1 = 0, g2 = 0, k1 = 0, k2 = 0, l1 = 0, l2 = 0, ply1 = 1, ply2 = 0, h1 = 0, h2 = 0, h3 = 0, h4 = 0, s1 = 0, s2 = 0;
+	p1 = 0, p2 = 0, enter = 0;
+	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT);
-	glColor3f(1,1,1);
+	glColor3f(1, 1, 1);
 	glLineWidth(2);
 
 	glBegin(GL_LINE_LOOP);
-	glVertex2f(0.9,0.9);
-	glVertex2f(-0.9,0.9);    //Main BOX Outline
-	glVertex2f(-0.9,-0.9);
-	glVertex2f(0.9,-0.9);
-	glEnd();
-    
-
-
-
-	glBegin(GL_LINES);
-	glVertex2f(-0.2,-0.2);
-	glVertex2f(-0.9,-0.2); //(-,-) BOX
-	glVertex2f(-0.9,-0.9);
-	glVertex2f(-0.2,-0.9);
-	glColor3f(1,1,1);
+	glVertex2f(0.9, 0.9);
+	glVertex2f(-0.9, 0.9);    //Main BOX Outline
+	glVertex2f(-0.9, -0.9);
+	glVertex2f(0.9, -0.9);
 	glEnd();
 
 
 
 
 	glBegin(GL_LINES);
-   	glVertex2f(0.2,0.2);
-	glVertex2f(0.9,0.2);   //(+,+) BOX
-	glVertex2f(0.9,0.9);
-	glVertex2f(0.2,0.9);
+	glVertex2f(-0.2, -0.2);
+	glVertex2f(-0.9, -0.2); //(-,-) BOX
+	glVertex2f(-0.9, -0.9);
+	glVertex2f(-0.2, -0.9);
+	glColor3f(1, 1, 1);
+	glEnd();
+
+
+
+
+	glBegin(GL_LINES);
+	glVertex2f(0.2, 0.2);
+	glVertex2f(0.9, 0.2);   //(+,+) BOX
+	glVertex2f(0.9, 0.9);
+	glVertex2f(0.2, 0.9);
 	glEnd();
 
 
 
 
 	glBegin(GL_TRIANGLES);
-	glColor3f(0,0,1);
-	glVertex2f(0.2,0.2);
-	glVertex2f(-0.2,0.2);    //Top part Home
-	glVertex2f(0,0);
+	glColor3f(0, 0, 1);
+	glVertex2f(0.2, 0.2);
+	glVertex2f(-0.2, 0.2);    //Top part Home
+	glVertex2f(0, 0);
 	glEnd();
 
 
 
 
 	glBegin(GL_TRIANGLES);
-	glColor3f(1,0,0);
-	glVertex2f(-0.2,-0.2);
-	glVertex2f(0.2,-0.2);    //Bottom part Home
-	glVertex2f(0,0);
+	glColor3f(1, 0, 0);
+	glVertex2f(-0.2, -0.2);
+	glVertex2f(0.2, -0.2);    //Bottom part Home
+	glVertex2f(0, 0);
 	glEnd();
-	glColor3f(1,1,1);
+	glColor3f(1, 1, 1);
 
 
 
-       glBegin(GL_QUADS);
-	glColor3f(0,0,1);
-	glVertex2f(-0.075,0.2);
-	glVertex2f(0.075,0.2); 
-	 glVertex2f(0.075,0.785);                    //TOP ARROW
-	glVertex2f(-0.075,0.785);                                                     
-	glVertex2f(0.2,0.67);
-	glVertex2f(-0.075,0.67); 
-	 glVertex2f(-0.075,0.785);
-	glVertex2f(0.2,0.785); 
-	glEnd();
-	glColor3f(1,1,1);
-
-
-     
-	
-	
 	glBegin(GL_QUADS);
-	glColor3f(1,0,0);
-	glVertex2f(-0.075,-0.2);
-	glVertex2f(0.075,-0.2); 
-	 glVertex2f(0.075,-0.785);                    //BOTTOM ARROW
-	glVertex2f(-0.075,-0.785);                                                     
-	glVertex2f(-0.2,-0.67);
-	glVertex2f(-0.075,-0.67); 
-	 glVertex2f(-0.075,-0.785);
-	glVertex2f(-0.2,-0.785); 
+	glColor3f(0, 0, 1);
+	glVertex2f(-0.075, 0.2);
+	glVertex2f(0.075, 0.2);
+	glVertex2f(0.075, 0.785);                    //TOP ARROW
+	glVertex2f(-0.075, 0.785);
+	glVertex2f(0.2, 0.67);
+	glVertex2f(-0.075, 0.67);
+	glVertex2f(-0.075, 0.785);
+	glVertex2f(0.2, 0.785);
 	glEnd();
-	glColor3f(1,1,1);
+	glColor3f(1, 1, 1);
 
 
 
-glBegin(GL_LINE_LOOP);
-	glVertex2f(-0.4,-0.4);
-	glVertex2f(-0.8,-0.4);    //Player coins (-,-) BOX
-	glVertex2f(-0.8,-0.8);
-	glVertex2f(-0.4,-0.8);
+
+
+	glBegin(GL_QUADS);
+	glColor3f(1, 0, 0);
+	glVertex2f(-0.075, -0.2);
+	glVertex2f(0.075, -0.2);
+	glVertex2f(0.075, -0.785);                    //BOTTOM ARROW
+	glVertex2f(-0.075, -0.785);
+	glVertex2f(-0.2, -0.67);
+	glVertex2f(-0.075, -0.67);
+	glVertex2f(-0.075, -0.785);
+	glVertex2f(-0.2, -0.785);
+	glEnd();
+	glColor3f(1, 1, 1);
+
+
+
+	glBegin(GL_LINE_LOOP);
+	glVertex2f(-0.4, -0.4);
+	glVertex2f(-0.8, -0.4);    //Player coins (-,-) BOX
+	glVertex2f(-0.8, -0.8);
+	glVertex2f(-0.4, -0.8);
 	glEnd();
 	glFlush();
 
 
 	glBegin(GL_LINE_LOOP);
-	glVertex2f(-0.45,-0.65);
-	glVertex2f(-0.55,-0.65);    
-	glVertex2f(-0.55,-0.75);
-	glVertex2f(-0.45,-0.75);
+	glVertex2f(-0.45, -0.65);
+	glVertex2f(-0.55, -0.65);
+	glVertex2f(-0.55, -0.75);
+	glVertex2f(-0.45, -0.75);
 	glEnd();
 	glFlush();
 
-                                        //Player coins  keeping (-,-) BOX
+	//Player coins  keeping (-,-) BOX
 	glBegin(GL_LINE_LOOP);
-	glVertex2f(-0.75,-0.45);
-	glVertex2f(-0.65,-0.45);    
-	glVertex2f(-0.65,-0.55);
-	glVertex2f(-0.75,-0.55);
+	glVertex2f(-0.75, -0.45);
+	glVertex2f(-0.65, -0.45);
+	glVertex2f(-0.65, -0.55);
+	glVertex2f(-0.75, -0.55);
 	glEnd();
 	glFlush();
 
 
 	glBegin(GL_LINE_LOOP);
-	glVertex2f(0.4,0.4);
-	glVertex2f(0.8,0.4);          //Player Coins (+,+) BOX
-	glVertex2f(0.8,0.8);
-	glVertex2f(0.4,0.8);
+	glVertex2f(0.4, 0.4);
+	glVertex2f(0.8, 0.4);          //Player Coins (+,+) BOX
+	glVertex2f(0.8, 0.8);
+	glVertex2f(0.4, 0.8);
 	glEnd();
 	glFlush();
 
 
-		glBegin(GL_LINE_LOOP);
-	glVertex2f(0.45,0.65);
-	glVertex2f(0.55,0.65);    
-	glVertex2f(0.55,0.75);
-	glVertex2f(0.45,0.75);
-	glEnd();
-	glFlush();
-
-                                        //Player coins  keeping (+,+) BOX
 	glBegin(GL_LINE_LOOP);
-	glVertex2f(0.75,0.45);
-	glVertex2f(0.65,0.45);    
-	glVertex2f(0.65,0.55);
-	glVertex2f(0.75,0.55);
+	glVertex2f(0.45, 0.65);
+	glVertex2f(0.55, 0.65);
+	glVertex2f(0.55, 0.75);
+	glVertex2f(0.45, 0.75);
+	glEnd();
+	glFlush();
+
+	//Player coins  keeping (+,+) BOX
+	glBegin(GL_LINE_LOOP);
+	glVertex2f(0.75, 0.45);
+	glVertex2f(0.65, 0.45);
+	glVertex2f(0.65, 0.55);
+	glVertex2f(0.75, 0.55);
 	glEnd();
 	glFlush();
 
 	glBegin(GL_LINE_STRIP);
-	glVertex2f(0.15,-0.84);           //Bottom direction
-	glVertex2f(0,-0.84);
-	glVertex2f(0,-0.6);
+	glVertex2f(0.15, -0.84);           //Bottom direction
+	glVertex2f(0, -0.84);
+	glVertex2f(0, -0.6);
 
 	glEnd();
 	glFlush();
 
 
-    glBegin(GL_LINES);
-	glVertex2f(0,-0.6);
-	glVertex2f(-0.04,-0.64);
-	glVertex2f(0,-0.6);
-	glVertex2f(0.04,-0.64);
+	glBegin(GL_LINES);
+	glVertex2f(0, -0.6);
+	glVertex2f(-0.04, -0.64);
+	glVertex2f(0, -0.6);
+	glVertex2f(0.04, -0.64);
 	glEnd();
 
 
 	glBegin(GL_LINE_STRIP);
-	glVertex2f(-0.15,0.84);           //Top direction
-	glVertex2f(0,0.84);
-	glVertex2f(0,0.6);
+	glVertex2f(-0.15, 0.84);           //Top direction
+	glVertex2f(0, 0.84);
+	glVertex2f(0, 0.6);
 	glEnd();
-	glFlush();
-
-	glBegin(GL_LINES);
-	glVertex2f(0,0.6);
-	glVertex2f(-0.04,0.64);
-	glVertex2f(0,0.6);
-	glVertex2f(0.04,0.64);
-	glEnd();
-
-
-	glBegin(GL_LINES);
-	glVertex2f(-0.075,-0.2);
-	glVertex2f(-0.075,-0.9);    
-	glEnd();                       //Bottom part Lines
-	glBegin(GL_LINES);
-	glVertex2f(0.075,-0.2);
-	glVertex2f(0.075,-0.9);    
-	glEnd();
-	glBegin(GL_LINES);
-	glVertex2f(-0.2,-0.2);
-	glVertex2f(-0.2,-0.9);    
-	glEnd();
-	                       
-	glBegin(GL_LINES);
-	glVertex2f(0.2,-0.2);
-	glVertex2f(0.2,-0.9);    
-	glEnd();
-
-	glBegin(GL_LINES);
-	glVertex2f(-0.9,-0.2);
-	glVertex2f(-0.9,-0.9);    
-	glEnd();
-                       
-	glBegin(GL_LINES);
-	glVertex2f(0.9,0.2);
-	glVertex2f(0.9,0.9);    
-	glEnd();
-
-
-
-	glBegin(GL_LINES);
-	glVertex2f(-0.075,0.2);
-	glVertex2f(-0.075,0.9);    
-	glEnd();
-                                              //Top part Lines
-	glBegin(GL_LINES);
-	glVertex2f(0.075,0.2);
-	glVertex2f(0.075,0.9);    
-	glEnd();
-	
-	glBegin(GL_LINES);
-	glVertex2f(-0.2,0.2);
-	glVertex2f(-0.2,0.9);    
-	glEnd();
-	                       
-	glBegin(GL_LINES);
-	glVertex2f(0.2,0.2);
-	glVertex2f(0.2,0.9);    
-	glEnd();
-	
-
-
-
-    glBegin(GL_LINES);
-	glVertex2f(0.2,-0.075);
-	glVertex2f(0.9,-0.075);    
-	glEnd();                                            //Right part Lines
-	glBegin(GL_LINES);
-	glVertex2f(0.2,0.075);
-	glVertex2f(0.9,0.075);    
-	glEnd();
-	glBegin(GL_LINES);
-	glVertex2f(0.2,-0.2);
-	glVertex2f(0.9,-0.2);    
-	glEnd();
-	                       
-	glBegin(GL_LINES);
-	glVertex2f(0.2,0.2);
-	glVertex2f(0.9,0.2);    
-	glEnd();
-
-
-
-
-	glBegin(GL_LINES);
-	glVertex2f(-0.2,-0.075);
-	glVertex2f(-0.9,-0.075);    
-	glEnd();
-	                                                         //Left part Lines
-	glBegin(GL_LINES);
-	glVertex2f(-0.2,0.075);
-	glVertex2f(-0.9,0.075);    
-	glEnd();
-
-	glBegin(GL_LINES);
-	glVertex2f(-0.2,-0.2);
-	glVertex2f(-0.9,-0.2);    
-	glEnd();
-	                        
-	glBegin(GL_LINES);
-	glVertex2f(-0.2,0.2);
-	glVertex2f(-0.9,0.2);    
-	glEnd();
-
-
-
-
-   glBegin(GL_LINES);
-	glVertex2f(-0.2,-0.784);
-	glVertex2f(0.2,-0.784);    
-	glEnd();
-	                       
-	glBegin(GL_LINES);
-    glVertex2f(-0.2,-0.67);
-	glVertex2f(0.2,-0.67);    
-	glEnd();
-
-	glBegin(GL_LINES);
-    glVertex2f(-0.2,-0.552);
-	glVertex2f(0.2,-0.552);    
-	glEnd();                                  //Across -Bottom Lines
-
-	glBegin(GL_LINES);
-    glVertex2f(-0.2,-0.436);
-	glVertex2f(0.2,-0.436);    
-	glEnd();
-
-	glBegin(GL_LINES);
-    glVertex2f(-0.2,-0.32);
-	glVertex2f(0.2,-0.32);    
-	glEnd();
-
-	
