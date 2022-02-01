@@ -1,3 +1,0 @@
-﻿  main.cpp
-C:\Users\Ryan\source\repos\LudoTrial\LudoTrial\main.cpp(2078,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  LudoTrial.vcxproj -> C:\Users\Ryan\source\repos\LudoTrial\Debug\LudoTrial.exe
